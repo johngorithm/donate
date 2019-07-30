@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'donation_screen.dart';
+import 'package:scoped_state/screens/donation_screen.dart';
 import 'model/donation.dart';
 
 
