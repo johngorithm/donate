@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:scoped_state/model/donation.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 const kOrangePrimary = Colors.deepOrangeAccent;
 
@@ -18,8 +19,9 @@ class _DonationScreenState extends State<DonationScreen> {
       decoration: BoxDecoration(
         color: kOrangePrimary,
         image: DecorationImage(
-          image: NetworkImage(
-              'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&auto=format&fit=crop&w=639&q=80'),
+          image: CachedNetworkImageProvider(
+            'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&auto=format&fit=crop&w=639&q=80',
+          ),
           fit: BoxFit.fill,
         ),
       ),
@@ -142,7 +144,9 @@ class _DonationScreenState extends State<DonationScreen> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 10.0,),
+          padding: EdgeInsets.only(
+            right: 10.0,
+          ),
           child: ScopedModelDescendant<Donation>(
             builder: (context, child, model) => RawMaterialButton(
               shape: CircleBorder(),
